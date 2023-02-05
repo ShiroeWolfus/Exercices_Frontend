@@ -1,0 +1,60 @@
+menu {
+    display: none;
+    list-style-type: none;
+}
+
+#menu_deroul{
+    justify-content: space-evenly;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+h3{
+    border: double;
+}
+#menu-deroul li{
+    background-color: aquamarine ;
+}
+
+table, td{
+    border: 1px solid;
+   
+}
+table {
+    justify-content: center;
+}
+
+h3#titre2{
+    text-align: center;
+    display: block;
+  
+}
+input{
+    display: flex;
+}
+img{
+    width: 20vw;
+    height: 20vh;
+}
+body th {
+    text-align: center;
+}
+
+/* select{
+    display: flex;
+} */
+
+ul {
+    /* display: table-footer-group; */
+    list-style: none;
+    font-size: small;
+}
+
+
+label{
+    /* display: table-footer-group; */
+    font-size: small;
+}
+/* h3#titre5{
+    display;
+} */
