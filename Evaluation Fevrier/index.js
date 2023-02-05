@@ -195,36 +195,37 @@ mn3.addEventListener("click",()=> {
     dropList.appendChild(optfont)
 
     let optfont1 = document.createElement("option");
-    optfont1.setAttribute("value", "Arial");
+    optfont1.setAttribute("font-family", "Arial");
     optfont1.innerText='Arial'
     dropList.appendChild(optfont1)
 
     let optfont2 = document.createElement("option");
-    optfont2.setAttribute("value", "verdana");
+    optfont2.setAttribute("font-family", "verdana");
     optfont2.innerText='Verdana'
     dropList.appendChild(optfont2)
 
     let optfont3 = document.createElement("option");
-    optfont3.setAttribute("value", "Tahoma");
-    optfont3.innerText='Helvetica'
+    optfont3.setAttribute("font-family", "Tahoma");
+    optfont3.innerText='Tahoma'
     dropList.appendChild(optfont3)
 
-    function newPolice() {
-        let myselect = dropList;
-        let font = myselect.options[myselect.selectedIndex].value;
-        txtdrop.style.fontFamily = font;
-    }
+    // function newPolice() {
+    //     let myselect = dropList;
+    //     let font = myselect.options[myselect.selectedIndex].value;
+    //     txtdrop.style.fontFamily = font;
+    // }
+    document.getElementById('fontPolice').addEventListener("change", function(){
+        if(this.value){
+            txtLorem.style.fontFamily = this.value
+            console.log(this.addEventListener)
+         };   
+    });
 });
 // function (font) {
 //         document.getElementById("txtdrop").style.fontFamily = font.value;
     // }
 // fonction qui permet de changer la police du texte    
 
-// document.getElementById('value').addEventListener("change", function(){
-//     if(this.value){
-//         txtdrop.style.fontFamily = this.value
-//      };   
-// });
 
 
 //création du menu 4
@@ -238,12 +239,14 @@ mn4.addEventListener("click",()=> {
     
     //création de la liste non ordonnée 
     let valueList = document.createElement("ul")
+    
     men4.appendChild(valueList)
     
     //création des items de la liste non ordonnée 
     let val1 = document.createElement("li");
     val1.innerText='Value 1'
     valueList.appendChild(val1)
+    val1.setAttribute("id", "listMov")
 
 
     let val2 = document.createElement("li");
@@ -270,39 +273,40 @@ mn4.addEventListener("click",()=> {
     let downLi = document.createElement("button")
     downLi.innerText='Down'
     valueList.appendChild(downLi)
-
-    let it1 = valueList[0]
-    let it2 = valueList[1]
-    let it3 = valueList[2]
-    let it4 = valueList[3]
+    let ul = valueList
+    let arrVal = ul.getElementsByTagName("li");
+    let it1 = arrVal[0]
+    let it2 = arrVal[1]
+    let it3 = arrVal[2]
+    let it4 = arrVal[3]
     //modificationd de l'ordre des li dans la liste non ordonnée 
     upLi.addEventListener("click",()=>{
-        if (it1 === valueList[1]){
+        if (it1 == arrVal[1]){
             it2.insertAdjacentElement('beforebegin',it1);
         }
-        else if (it1 === valueList[2]){
+        else if (it1 == arrVal[2]){
             it3.insertAdjacentElement('beforebegin',it1);
         }
-        else if (it1 === valueList[3]){
+        else if (it1 == arrVal[3]){
             it4.insertAdjacentElement('beforebegin',it1);
         }
-        else if (it1 === valueList[4]){
+        else if (it1 == arrVal[0]){
             it3.insertAdjacentElement('afterend',it1);
         }    
     console.log(upLi.addEventListener)
     })
 
     downLi.addEventListener("click",()=>{
-        if (it1 === valueList[0]){
+        if (it1 == arrVal[0]){
             it2.insertAdjacentElement('afterend',it1);
         }
-        else if (it1 === valueList[1]){
+        else if (it1 == arrVal[1]){
             it3.insertAdjacentElement('afterend',it1);
         }
-        else if (it1 === valueList[2]){
+        else if (it1 == arrVal[2]){
             it4.insertAdjacentElement('afterend',it1);
         }
-        else if (it1 === valueList[3]){
+        else if (it1 == arrVal[3]){
             it2.insertAdjacentElement('beforebegin',it1);
         }    
     })
